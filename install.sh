@@ -2,7 +2,7 @@
 
 # How to Install
 # --------------
-# bash <(curl -s http://mywebsite.com/weeabo_install.sh)         
+# bash <(curl -s https://raw.githubusercontent.com/cgarvie/dante-install/master/install.sh)         
 
 AUTHUSER=`head /dev/urandom | tr -dc A-Za-z0-9 | head -c 20 ; echo ''`
 AUTHPASS=`head /dev/urandom | tr -dc A-Za-z0-9 | head -c 20 ; echo ''`
