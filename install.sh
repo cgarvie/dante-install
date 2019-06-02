@@ -2,7 +2,7 @@
 
 # How to Install
 # --------------
-# bash <(curl -s https://raw.githubusercontent.com/cgarvie/dante-install/master/install.sh)         
+# ACCOUNTID=123 && bash <(curl -s https://raw.githubusercontent.com/cgarvie/dante-install/master/install.sh)         
 
 AUTHUSER=`head /dev/urandom | tr -dc A-Za-z0-9 | head -c 20 ; echo ''`
 AUTHPASS=`head /dev/urandom | tr -dc A-Za-z0-9 | head -c 20 ; echo ''`
@@ -25,10 +25,10 @@ echo "pass=$AUTHPASS" >> ~/.weeabo
 echo "port=$AUTHPORT" >> ~/.weeabo
 
 MACHINEID=`echo $AUTHUSER | /usr/bin/md5sum | cut -f1 -d" "`
-curl https://weeabo.com/hello/new/$MACHINEID/$AUTHUSER/$AUTHPASS/$AUTHPORT/
+curl https://weeabo.com/api/hello/new/$ACCOUNTID/$MACHINEID/$AUTHUSER/$AUTHPASS/$AUTHPORT/
 crontab -l > mycron
 #echo new cron into cron file
-echo "*/5 * * * * curl https://weeabo.com/hello/up/$MACHINEID/" >> mycron
+echo "*/5 * * * * curl https://weeabo.com/api/hello/up/$MACHINEID/" >> mycron
 #install new cron file
 crontab mycron
 rm mycron
