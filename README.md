@@ -1,4 +1,5 @@
-Copy+paste a single command line to sell your unused
+Copy+paste a single command line to sell your unused IPs and bandwidth.
+
 Prioritized Roadmap:
 
 - Allow for auto-updating (optional, opt-in)
